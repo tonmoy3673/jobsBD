@@ -2,9 +2,10 @@ import { NavLink } from "react-router-dom";
 
 const NavBar=()=>{
     const links=<>
-    <li><NavLink>Statistics</NavLink></li>
-    <li><NavLink>Applied Jobs</NavLink></li>
-    <li><NavLink>Blog</NavLink></li>
+    <li className="mr-6 hover:text-amber-500	font-semibold"><NavLink to='/home'>Home</NavLink></li>
+    <li className="mr-6  hover:text-amber-500	font-semibold"><NavLink to='applied'>Applied Jobs</NavLink></li>
+    <li className="mr-6  hover:text-amber-500	font-semibold"><NavLink to='jobs'>Jobs</NavLink></li>
+    <li className="mr-6  hover:text-amber-500	font-semibold"><NavLink to='blog'>Blog</NavLink></li>
     </>
     return (
 
@@ -31,7 +32,7 @@ const NavBar=()=>{
        {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="cursor-pointer hover:text-amber-500	font-semibold lg:text-2xl md:text-xl ">Jobs BD</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className=" menu-horizontal px-1">
@@ -39,7 +40,7 @@ const NavBar=()=>{
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a className="btn hover: hover:bg-amber-500	font-semibold">Button</a>
   </div>
 </div>
     )
