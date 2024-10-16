@@ -5,6 +5,9 @@
 .common-btn {
   background-color: cornflowerblue;
   color: white;
-  padding: 10px 15px;
+
   border-radius: 10px;
+  cursor: pointer;
+  transition: all ease-in-out;
+  text-align: center;
 }

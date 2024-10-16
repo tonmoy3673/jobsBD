@@ -40,7 +40,7 @@ const NavBar=()=>{
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn hover: hover:bg-amber-500	font-semibold">Button</a>
+    <a className="common-btn hover: hover:bg-amber-500	font-semibold py-[5px] lg:py-[10px] px-2 lg:px-[15px] ">Start Applying</a>
   </div>
 </div>
     )
