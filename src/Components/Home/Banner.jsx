@@ -2,7 +2,7 @@
  import user from '/public/Images/users/user.png';
 const Banner=()=>{
     return (
-        <div className="banner-container lg:flex items-center justify-between py-6 md:py-10 lg:py-16">
+        <div className="banner-container lg:flex items-center justify-between py-6 md:py-10 lg:py-12">
            <div>
            <h1 className='text-xl md:text-2xl lg:text-5xl font-semibold leading-relaxed lg:leading-[55px] mb-2 lg:mb-3'>One Step <br/> Closer To Your <br/>
             <span className='text-[#6495ED]'>Dream Job</span>
