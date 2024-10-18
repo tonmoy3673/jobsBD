@@ -14,7 +14,7 @@ const JobDetails=()=>{
 
     const handleApply=()=>{
         saveJobApplication(jobId);
-        setApplied(true)
+        setApplied(true);
     }
 
     return (
