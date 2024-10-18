@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar=()=>{
     const links=<>
@@ -32,7 +32,7 @@ const NavBar=()=>{
        {links}
       </ul>
     </div>
-    <a className="cursor-pointer hover:text-amber-500	font-semibold lg:text-2xl md:text-xl ">Jobs BD</a>
+    <Link to='/home' className="cursor-pointer hover:text-amber-500	font-semibold lg:text-2xl md:text-xl ">Jobs BD</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className=" menu-horizontal px-1">
