@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Job = ({job}) => {
@@ -23,6 +24,11 @@ const Job = ({job}) => {
                 {/* ====== img ========= */}
                 <p>{salary}</p>
             </div>
+            </div>
+            <div className="py-2 md:py-4">
+                <Link to=''>
+                <button className="common-btn hover:bg-amber-500 py-[5px] lg:py-[10px] px-2 lg:px-[15px]">Details</button>
+                </Link>
             </div>
         </div>
     );
