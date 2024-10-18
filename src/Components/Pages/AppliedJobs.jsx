@@ -4,7 +4,7 @@ import { getJobApplication } from "../Utility/LocalStorage";
 
 const AppliedJobs = () => {
   const [appliedJobs, setAppliedJobs] = useState([]);
-  const [storeApplied,setStoreApplied]=useState([])
+  const [filterApplied,setFilterApplied]=useState([]);
   const jobs = useLoaderData();
 
   useEffect(() => {
@@ -14,6 +14,12 @@ const AppliedJobs = () => {
       setAppliedJobs(applied);
     }
   }, [jobs]);
+
+  const handleFilter=filter=>{
+
+  }
+
+
   console.log(appliedJobs);
   return (
     <div className="py-6 lg:py-12 text-center">
@@ -24,7 +30,7 @@ const AppliedJobs = () => {
 
       {/* ============== selection ============= */}
       <div className="py-4 lg:py-6">
-      <select className="select select-primary w-full max-w-xs">
+      <select onClick={()=>handleFilter()} className="select select-primary w-full max-w-xs">
         <option defaultChecked>All Jobs</option>
         <option>Remote</option>
         <option>On-Site</option>
