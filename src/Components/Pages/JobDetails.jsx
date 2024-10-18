@@ -21,7 +21,7 @@ const JobDetails=()=>{
             <h3>{job_title}</h3>
             <p>{job_responsibility}</p>
 
-            <div onClick={()=>saveJobApplication(id)} className="py-2 md:py-4">
+            <div onClick={()=>saveJobApplication(jobId)} className="py-2 md:py-4">
                 <button className="common-btn hover:bg-amber-500 py-[5px] lg:py-[10px] px-2 lg:px-[15px]">Apply</button>
             </div>
         </div>
