@@ -3,7 +3,7 @@ import Job from "./job";
 
 const AllJobs=()=>{
     const [jobs,setJobs]=useState([]);
-    const [jobLength,setJobLength]=useState(6);
+    const [jobLength,setJobLength]=useState(3);
     useEffect(()=>{
         fetch('/data/jobs.json')
         .then(res=>res.json())
@@ -26,9 +26,14 @@ const AllJobs=()=>{
             }
             </div>
             {/* ========== show all Button ============ */}
-            <div className="py-2">
-                <button onClick={()=>setJobLength(jobs.length)} className="common-btn hover:bg-amber-500 py-[5px] lg:py-[10px] px-2 lg:px-[15px]">Show All</button>
-            </div>
+            {
+                 jobLength === jobs.length ? null: (
+                    <div className="py-2">
+                <button onClick={()=>setJobLength(jobLength+3)} className="common-btn hover:bg-amber-500 py-[5px] lg:py-[10px] px-2 lg:px-[15px]">Show All</button>
+            </div> 
+                )
+               
+            }
         </div>
     )
 };
