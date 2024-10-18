@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const Job = ({job}) => {
-    const {location,remote_or_onsite,company_name,job_title,job_type,salary,logo}=job
+    const {id,location,remote_or_onsite,company_name,job_title,job_type,salary,logo}=job
     console.log(job);
     return (
         <div className="">
@@ -26,7 +26,7 @@ const Job = ({job}) => {
             </div>
             </div>
             <div className="py-2 md:py-4">
-                <Link to=''>
+                <Link to={`/job/${id}`}>
                 <button className="common-btn hover:bg-amber-500 py-[5px] lg:py-[10px] px-2 lg:px-[15px]">Details</button>
                 </Link>
             </div>
