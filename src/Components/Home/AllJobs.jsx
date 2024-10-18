@@ -11,7 +11,7 @@ const AllJobs=()=>{
     },[])
     
     return (
-        <div  className="py-8 lg:py-12 text-center">
+        <div id="all-jobs" className="py-8 lg:py-12 text-center">
             <div>
                 <h2 className="text-xl lg:text-3xl font-semibold text-center mb-3">Featured Jobs</h2>
                 <p>Explore thousands of job opportunities with all the information you need. Its your future</p>

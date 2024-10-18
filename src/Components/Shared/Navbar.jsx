@@ -2,9 +2,9 @@ import { Link, NavLink } from "react-router-dom";
 
 const NavBar=()=>{
     const links=<>
-    <li className="mr-6 hover:text-amber-500	font-semibold"><NavLink to='/home'>Home</NavLink></li>
-    <li className="mr-6  hover:text-amber-500	font-semibold"><NavLink to='applied'>Applied Jobs</NavLink></li>
-    <li className="mr-6  hover:text-amber-500	font-semibold"><NavLink to='jobs'>Jobs</NavLink></li>
+    <li  className="mr-6 hover:text-amber-500	font-semibold"><NavLink to='/home'>Home</NavLink></li>
+    <li className="mr-6  hover:text-amber-500	font-semibold"><NavLink to='/applied'>Applied Jobs</NavLink></li>
+    <li className="mr-6  hover:text-amber-500	font-semibold cursor-pointer"><a href='#all-jobs'>Jobs</a></li>
     <li className="mr-6  hover:text-amber-500	font-semibold"><NavLink to='blog'>Blog</NavLink></li>
     </>
     return (
@@ -40,7 +40,7 @@ const NavBar=()=>{
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="common-btn hover: hover:bg-amber-500	font-semibold py-[5px] lg:py-[10px] px-2 lg:px-[15px] ">Start Applying</a>
+    <a href="#all-jobs" className="common-btn hover: hover:bg-amber-500	font-semibold py-[5px] lg:py-[10px] px-2 lg:px-[15px] ">Start Applying</a>
   </div>
 </div>
     )
