@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getJobApplication } from "../Utility/LocalStorage";
+import FilterJobs from "./FilterJobs";
 
 const AppliedJobs = () => {
   const [appliedJobs, setAppliedJobs] = useState([]);
@@ -12,11 +13,15 @@ const AppliedJobs = () => {
     if (jobs && jobs.length > 0) {
       const applied = jobs.filter((job) => storedID.includes(job.id));
       setAppliedJobs(applied);
+      setFilterApplied(applied);
     }
   }, [jobs]);
 
   const handleFilter=filter=>{
-
+    if(filter==='all'){
+      setFilterApplied(filterApplied)
+    }
+    
   }
 
 
@@ -30,11 +35,16 @@ const AppliedJobs = () => {
 
       {/* ============== selection ============= */}
       <div className="py-4 lg:py-6">
-      <select onClick={()=>handleFilter()} className="select select-primary w-full max-w-xs">
-        <option defaultChecked>All Jobs</option>
+      <select  className="select select-primary w-full max-w-xs">
+        <option defaultChecked onSelect={()=>handleFilter('all')}>All Jobs</option>
         <option>Remote</option>
         <option>On-Site</option>
       </select>
+      </div>
+      <div>
+        {
+          filterApplied.map((job)=><FilterJobs FilterJobs={job} key={job.id}></FilterJobs>)
+        }
       </div>
       
     </div>
