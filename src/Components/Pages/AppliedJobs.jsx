@@ -1,13 +1,26 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getJobApplication } from "../Utility/LocalStorage";
-import FilterJobs from "./FilterJobs";
 
 const AppliedJobs = () => {
   const [appliedJobs, setAppliedJobs] = useState([]);
   const [filterApplied,setFilterApplied]=useState([]);
   const jobs = useLoaderData();
 
+  const handleFilter=filter=>{
+    if(filter ==='all'){
+      setFilterApplied(appliedJobs)
+    }
+    else if(filter === 'remote'){
+      const remoteJob= appliedJobs.filter((job)=> job.remote_or_onsite ==='Remote')
+      setFilterApplied(remoteJob)
+    }
+    else if (filter === 'onsite')
+    {
+      const jobOnsite = appliedJobs.filter((job)=>job.remote_or_onsite === 'Onsite');
+      setFilterApplied(jobOnsite)
+    }
+  }
   useEffect(() => {
     const storedID = getJobApplication();
     if (jobs && jobs.length > 0) {
@@ -17,12 +30,7 @@ const AppliedJobs = () => {
     }
   }, [jobs]);
 
-  const handleFilter=filter=>{
-    if(filter==='all'){
-      setFilterApplied(filterApplied)
-    }
-    
-  }
+  
 
 
   console.log(appliedJobs);
@@ -32,18 +40,24 @@ const AppliedJobs = () => {
         {" "}
         Total Applied Jobs : {appliedJobs.length}
       </h2>
-
       {/* ============== selection ============= */}
       <div className="py-4 lg:py-6">
-      <select  className="select select-primary w-full max-w-xs">
-        <option defaultChecked onSelect={()=>handleFilter('all')}>All Jobs</option>
-        <option>Remote</option>
-        <option>On-Site</option>
+      <select onChange={(e)=>handleFilter(e.target.value)}  className="select select-primary w-full max-w-xs">
+        <option value='all' >All Jobs</option>
+        <option value='remote'>Remote</option>
+        <option value='onsite'>On-Site</option>
       </select>
       </div>
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {
-          filterApplied.map((job)=><FilterJobs FilterJobs={job} key={job.id}></FilterJobs>)
+         filterApplied && filterApplied?.map((job)=><div key={job.id}>
+          <div >
+          <p>Company Name: {job.company_name}</p>
+          <p> Job Id: {job.id}</p>
+          <p>Job Type: {job.job_title}</p>
+          <p>Job Type: {job.remote_or_onsite}</p>
+          </div>
+         </div>)
         }
       </div>
       
